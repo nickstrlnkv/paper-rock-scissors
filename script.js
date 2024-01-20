@@ -5,10 +5,10 @@ function getComputerChoice() {
 }
 
 
-function getPlayerChoice() {
+/* function getPlayerChoice() {
     let playerChoice = prompt("Choice your item (paper, rock, scissors): ");
     return playerChoice;
-}
+} */
 
 function gameResult(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
@@ -60,13 +60,27 @@ function gameResult(playerSelection, computerSelection) {
         console.log("Error! Maybe you write a wrong. Try again!");
 }
 
+const buttons = document.querySelectorAll('button');
+const div = document.querySelector('.results');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log("button #" + button.id + " is clicked");
+
+    });
+});
+
+
+
+
 function game() {
     let bestOfFive = 0;
     let choices = [];
     let countPlayerWon = 0;
     let countComputerWon = 0;
-    while (bestOfFive != 5) {
-        choices.push(gameResult(getPlayerChoice(), getComputerChoice()));
+    
+    /* while (bestOfFive != 5) {
+        choices.push(gameResult(playerButtonChoice, getComputerChoice()));
         bestOfFive++;
         console.log(choices);
     }
@@ -91,7 +105,7 @@ function game() {
     }
     else {
         console.log("You won in best of five!");
-    }
+    } */
 
 }
 
